@@ -1,8 +1,12 @@
-container:
-  image: gcc:latest
 test_task:
-  check_env_script:
-    - apt-cache policy bash
+  container:
+    matrix:
+      image: bash:5.0
+      image: bash:4.4
+      image: bash:4.3
+      image: bash:4.2
+      image: bash:4.1
+      image: bash:4.0
   test_script: 
     - bash --version
     - cd example
